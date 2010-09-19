@@ -74,9 +74,10 @@ EmptyNode: class extends Node {
 
 Attributes: class extends Node {
     attrs := HashMap<String, String> new()
-    attrs["p"] = ":"
     init: func(val: String) { // evil hack, maybe Element should have some "default" attrs?
-        attrs["v"] = val    
+        attrs["v"] = val 
+        attrs["p"] = ":"
+   
     }
     accept: func(v: Visitor) {
         v visitAttributes(this)
